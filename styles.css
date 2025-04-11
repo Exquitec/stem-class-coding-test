@@ -115,14 +115,16 @@ body {
         gap: 1rem;
         transform: translateY(-100%);
         opacity: 0;
-        transition: transform 0.3s ease, opacity 0.3s ease;
+        visibility: hidden;
+        transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-        display: flex;
+        z-index: 1000;
     }
 
     .nav-links.active {
         transform: translateY(0);
         opacity: 1;
+        visibility: visible;
     }
 
     .nav-links li {
@@ -142,6 +144,23 @@ body {
 
     .mobile-menu-btn.active i {
         transform: rotate(90deg);
+    }
+
+    /* Responsive text sizes */
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+    }
+    
+    .section-title {
+        font-size: 2rem;
     }
 }
 
@@ -361,29 +380,6 @@ footer {
     background-color: var(--background-light);
     padding: 2rem 0;
     text-align: center;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-    
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-    
-    .hero-content h2 {
-        font-size: 1.5rem;
-    }
-    
-    .cta-buttons {
-        flex-direction: column;
-    }
-    
-    .section-title {
-        font-size: 2rem;
-    }
 }
 
 /* Theme Toggle Button */
